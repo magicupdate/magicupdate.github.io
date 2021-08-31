@@ -1,0 +1,47 @@
+    String.prototype.replaceAll = function (FindText, RepText) {
+        regExp = new RegExp(FindText, "g");
+        return this.replace(regExp, RepText);
+    }
+	
+	function getQS(par,name)
+	{
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = par.substr(1).match(reg);
+	if (r!=null) return unescape(r[2]); return null;
+	}
+	function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
+	function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
+	
+	var new_v = '2022.3005';
+	var package = 'maccms8_update';
+	var domain = 'magicupdate.github.io/';
+	var params = window.location.search;
+	
+	var scripts=document.getElementsByTagName('script');
+	for(i=0;i<scripts.length;i++){
+		var lastUrl=scripts[i].src;
+		if(lastUrl.indexOf(domain)>-1){
+			params = lastUrl.substr(lastUrl.indexOf('?'));
+		}
+	}
+
+	var de=new Date(),mh=de.getMonth()+1,da=de.getDate(),rr=mh+""+da;
+	var c = getQS(params,'c');
+	var v = getQS(params,'v');
+	var p = getQS(params,'p');
+	var v1 = v.replace(/\./g,"");
+	var v2 = new_v.replace(/\./g,"");
+	var html = '';
+
+	if(v2 > v1){
+		html = '<table class="tbinfo pleft layui-table"><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack/maccms_down">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tif s20">警告，补丁包【'+new_v+'】发布，修复安全漏洞和安全功能，请及时升级相应补丁！</font><a class="j-iframe" title="点击进入升级" href="?m=admin-update-file-'+package+'"><font class="tit s20">【点击进入在线升级】</font></a> <a href="https://github.com/magicblack/maccms_down/raw/master/maccms8_update.zip"><font class="tit s20">【下载离线升级包线路1】</font></a> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms8_update.zip"><font class="tit s20">【下载离线升级包线路2】</font></a></td></tr></table>';
+	}
+	else{
+		html = '<table class="tbinfo pleft layui-table"><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack/maccms_down">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tit s20">当前是最新版本！</font></td></tr></table>';
+	}
+	
+$("body").append("<style>.tit{color:blue;} .tif{color:red;} .s20{font-size:20px;} </style>");
+$("table:last").after(html);
+
+/*代码开源可查验功能，友情提示用户规避风险，避免被黑客获取域名和后台*/
+$.ajax({url:"/js/playerconfig.js"+"?"+new Date().getTime(),type:'get',dataType:'html',success:function(data){if(data.indexOf('maccms.com')!=-1||data.indexOf('maccms.pro')!=-1){var html='<table class="tbinfo pleft layui-table" ><thead><th colspan="4">安全提示</th></thead><tr><td colspan="4"><font class="tif s20">警告：警告：您的网站配置有风险！会被黑客抓取域名攻击。<br>1，立刻在线或离线升级到最新版本。2，进入【系统-》播放器配置】把所有maccms.com相关地址清空或改为本地链接。</font></td></tr></table>';$("table:last").after(html)}}});
