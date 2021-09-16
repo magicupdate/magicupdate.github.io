@@ -50,6 +50,3 @@
 
 $("body").append("<style>.tit{color:blue;} .tif{color:red;} .s20{font-size:20px;} </style>");
 $("table:last").after(html);
-
-/*代码开源可查验功能，友情提示用户，规避风险，避免被黑客获取域名和后台*/
-//$.ajax({url:"/static/js/playerconfig.js"+"?"+new Date().getTime(),type:'get',dataType:'html',success:function(data){if(data.indexOf('maccms.com')!=-1||data.indexOf('maccms.pro')!=-1){var html='<table class="tbinfo pleft layui-table" ><thead><th colspan="4">安全提示</th></thead><tr><td colspan="4"><font class="tif s20">警告：您的网站配置有风险！会被黑客抓取域名攻击。<br>1，立刻在线或离线升级到最新版本。2，进入【系统-》播放器配置】把所有maccms.com相关地址清空或改为本地链接。</font></td></tr></table>';$("table:last").after(html)}}});
