@@ -1,52 +1,72 @@
-    String.prototype.replaceAll = function (FindText, RepText) {
-        regExp = new RegExp(FindText, "g");
-        return this.replace(regExp, RepText);
-    }
-    
-    function getQS(par,name)
-    {
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-    var r = par.substr(1).match(reg);
-    if (r!=null) return unescape(r[2]); return null;
-    }
-    function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
-    function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
-    
-    var new_v = '2022.1000.3032';
-    var package = 'maccms10_update';
-    var domain = 'update.maccms.la/';
-    var params = window.location.search;
-    
-    var scripts=document.getElementsByTagName('script');
-    for(i=0;i<scripts.length;i++){
-        var lastUrl=scripts[i].src;
-        if(lastUrl.indexOf(domain)>-1){
-            params = lastUrl.substr(lastUrl.indexOf('?'));
-        }
-    }
-    
-    var de=new Date(),mh=de.getMonth()+1,da=de.getDate(),rr=mh+""+da;
-    var c = getQS(params,'c');
-    var v = getQS(params,'v');
-    var p = getQS(params,'p');
-    var tp = getQS(params,'tp');
+String.prototype.replaceAll = function (FindText, RepText) {
+    regExp = new RegExp(FindText, "g");
+    return this.replace(regExp, RepText);
+}
 
-    var v1 = v.replace(/\./g,"");
-    var v2 = new_v.replace(/\./g,"");
-    var html = '';
+function getQS(par,name)
+{
+var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+var r = par.substr(1).match(reg);
+if (r!=null) return unescape(r[2]); return null;
+}
+function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
+function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-    if(v2 > v1){
-        html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示【'+new_v+'】>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tif s20" style="display: none;">警告，补丁包【'+new_v+'】发布，修复安全漏洞和更新服务，请及时升级相应补丁！</font><a class="j-iframe" title="点击进入升级" data-href="'+ADMIN_PATH+'/admin/update/step1.html?file='+package+'"><font class="tit s20">【点击进入在线升级】</font></a> <a href="https://github.com/magicblack/maccms_down/raw/master/maccms10_update.zip"><font class="tit s20">【下载离线升级包线路1】</font></a> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms10_update.zip"><font class="tit s20">【下载离线升级包线路2】</font></a></td></tr></table>';
+var new_v = '2023.1000.3051';
+var update_content = [
+    '<strong>v2023.1000.3051 更新内容：</strong>',
+    '1，此版本为小更新，是对3050版本的增补。',
+    '2，修正部分模板函数mac_url_vod_role缺失。',
+    '3，修正视频随机排序时结果较少时报错问题。',
+    '',
+    '<strong>v2023.1000.3050 更新内容：</strong>',
+    '1，支持后台管理上传webp图片。',
+    '2，支持vod_search自定义缓存时间。',
+    '3，支持后台强制清理vod_search缓存。',
+    '4，修正后台开启页面缓存时，模板json请求解析问题。',
+    '5，修正数据库读写分离下导入sql的问题。',
+    '6，修正采集指定返回多个播放组相关逻辑。',
+    '7，优化卡密生成和导出，修正开头为0问题。',
+    '8，优化注册手机号判断，防止消耗短信。',
+    '9，优化微信登录、后台图片字段XSS风险。',
+    '10，优化模板标签foreach标签，支持数量。',
+    '11，优化随机视频排序rnd的性能问题。',
+    '12，优化角色、剧情页面，增加参数。',
+].join('<br>');
+var package = 'maccms10_update';
+var domain = 'update.maccms.la/';
+var params = window.location.search;
+
+var scripts=document.getElementsByTagName('script');
+for(i=0;i<scripts.length;i++){
+    var lastUrl=scripts[i].src;
+    if(lastUrl.indexOf(domain)>-1){
+        params = lastUrl.substr(lastUrl.indexOf('?'));
     }
-    else{
-        html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tit s20">当前是最新版本！</font></td></tr></table>';
+}
+
+var de=new Date(),mh=de.getMonth()+1,da=de.getDate(),rr=mh+""+da;
+var c = getQS(params,'c');
+var v = getQS(params,'v');
+var p = getQS(params,'p');
+var tp = getQS(params,'tp');
+
+var v1 = v.replace(/\./g,"");
+var v2 = new_v.replace(/\./g,"");
+var html = '';
+
+if(v2 > v1){
+    html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示【'+new_v+'】>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tif s20" style="display: none;">警告，补丁包【'+new_v+'】发布，修复安全漏洞和更新服务，请及时升级相应补丁！</font><a class="j-iframe" title="点击进入升级" data-href="'+ADMIN_PATH+'/admin/update/step1.html?file='+package+'"><font class="tit s20">【点击进入在线升级】</font></a> <a href="https://github.com/magicblack/maccms_down/raw/master/maccms10_update.zip"><font class="tit s20">【下载离线升级包线路1】</font></a> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms10_update.zip"><font class="tit s20">【下载离线升级包线路2】</font></a></td></tr><tr><td colspan="4">' + update_content + '</td></tr></table>';
+}
+else{
+    html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群https://t.me/maccms_channel</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack">Github源码https://github.com/magicblack</a></th></thead><tr><td colspan="4"><font class="tit s20">当前是最新版本！</font></td></tr></table>';
+}
+if(tp !=null){
+    var v3 = tp.replace(/\./g,"");
+    if(v3 < 5024){
+        html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">ThinkPHP框架更新提示</th></thead><tr><td colspan="4"><font class="tif s20">警告：ThinkPHP5.0.24版本发布安全更新，建议更新框架以免造成不必要的损失，下载后直接覆盖到网站根目录即可！</font> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/%E4%B8%93%E7%94%A8thinkphp%205.0.24.zip"><font class="tit s20">【点击下载框架升级包】</font></a></td></tr></table>';
     }
-    if(tp !=null){
-        var v3 = tp.replace(/\./g,"");
-        if(v3 < 5024){
-            html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">ThinkPHP框架更新提示</th></thead><tr><td colspan="4"><font class="tif s20">警告：ThinkPHP5.0.24版本发布安全更新，建议更新框架以免造成不必要的损失，下载后直接覆盖到网站根目录即可！</font> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/%E4%B8%93%E7%94%A8thinkphp%205.0.24.zip"><font class="tit s20">【点击下载框架升级包】</font></a></td></tr></table>';
-        }
-    }
+}
 
 $("body").append("<style>.tit{color:blue;} .tif{color:red;} .s20{font-size:20px;} </style>");
 $("table:last").after(html);
