@@ -12,26 +12,13 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2023.1000.3051';
+var new_v = '2024.1000.4020';
 var update_content = [
-    '<strong>v2023.1000.3051 更新内容：</strong>',
-    '1，此版本为小更新，是对3050版本的增补。.',
-    '2，修正部分模板函数mac_url_vod_role缺失。',
-    '3，修正视频随机排序时结果较少时报错问题。',
-    '',
-    '<strong>v2023.1000.3050 更新内容：</strong>',
-    '1，支持后台管理上传webp图片。',
-    '2，支持vod_search自定义缓存时间。',
-    '3，支持后台强制清理vod_search缓存。',
-    '4，修正后台开启页面缓存时，模板json请求解析问题。',
-    '5，修正数据库读写分离下导入sql的问题。',
-    '6，修正采集指定返回多个播放组相关逻辑。',
-    '7，优化卡密生成和导出，修正开头为0问题。',
-    '8，优化注册手机号判断，防止消耗短信。',
-    '9，优化微信登录、后台图片字段XSS风险。',
-    '10，优化模板标签foreach标签，支持数量。',
-    '11，优化随机视频排序rnd的性能问题。',
-    '12，优化角色、剧情页面，增加参数。',
+
+    '<strong>2024.1000.4020 更新内容：</strong>',
+        '1，修复后台潜在xss问题。',
+        '2、支持在后台配置是否引入兼容旧版本的js。',
+        '3、修复采集角色时第二页报错的问题。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
