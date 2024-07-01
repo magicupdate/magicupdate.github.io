@@ -12,13 +12,15 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2024.1000.4020';
+var new_v = '2024.1000.4040';
 var update_content = [
 
-    '<strong>2024.1000.4020 更新内容：</strong>',
-        '1，修复后台潜在xss问题。',
-        '2、支持在后台配置是否引入兼容旧版本的js。',
-        '3、修复采集角色时第二页报错的问题。',
+    '<strong>2024.1000.4040 更新内容：</strong>',
+        '1，更新兼容旧版本。',
+        '2，增加后台多语言文件。',
+        '3，支持在右上角选取多语言。',
+        '4，修正随机视频有时候有数据的情况。',
+        '5，配置UI。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
