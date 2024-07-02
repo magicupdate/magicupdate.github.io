@@ -12,10 +12,10 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2024.1000.4041';
+var new_v = '2024.1000.4042';
 var update_content = [
 
-    '<strong>2024.1000.4041 更新内容：</strong>',
+    '<strong>2024.1000.4042 更新内容：</strong>',
         '1，更新兼容旧版本。',
         '2，增加后台多语言文件。',
         '3，支持在右上角选取多语言。',
