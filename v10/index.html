@@ -12,14 +12,15 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2024.1000.4044';
+var new_v = '2024.1000.4045';
 var update_content = [
 
-    '<strong>2024.1000.4044 更新内容：</strong>',
-        '1，优化重名检测卡顿问题。',
-        '2，入库重复规移除名称必选和新增豆瓣id。',
-        '3，修正帐号无法登出问题。',
-        '4，其他细节优化。',
+    '<strong>2024.1000.4045 更新内容：</strong>',
+        '1，修复采集视频数据时表报错问题。',
+        '2，优化重名表结构，支持utf8mb4。',
+        '3，支持评论黑名单管理。',
+        '4，支持视频播放量等数据设置归零。',
+        '5，其他安全及细节优化。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
