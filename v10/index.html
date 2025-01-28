@@ -12,12 +12,13 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2024.1000.4046';
+var new_v = '2025.1000.4047';
 var update_content = [
 
-    '<strong>2024.1000.4046 更新内容：</strong>',
-        '1，新版后台UI。',
-        '2，其他细节优化。',
+    '<strong>2025.1000.4047 更新内容：</strong>',
+        '1，新版后台优化。',
+        '2，数据库前缀修正。',
+        '3，其他细节优化。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
