@@ -12,13 +12,15 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2025.1000.4050';
+var new_v = '2025.1000.4051';
 var update_content = [
 
-    '<strong>2025.1000.4050 更新内容：</strong>',
-        '1，新版后台优化。',
-        '2，新模块与公共 API 支持及后台修正。',
-        '3，细节优化与潜在问题修补。',
+    '<strong>2025.1000.4051 更新内容：</strong>',
+        '1，修正会员多分组相关问题。',
+        '2，解决加密id出现404问题。',
+        '3，修正漫画模块部分bug。',
+        '4，修正新版后台部分UI问题。',
+        '5，修正会员组和试看问题。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
