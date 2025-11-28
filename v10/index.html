@@ -12,15 +12,15 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2025.1000.4051';
+var new_v = '2025.1000.4052';
 var update_content = [
 
-    '<strong>2025.1000.4051 更新内容：</strong>',
-        '1，修正会员多分组相关问题。',
-        '2，解决加密id出现404问题。',
-        '3，修正漫画模块部分bug。',
-        '4，修正新版后台部分UI问题。',
-        '5，修正会员组和试看问题。',
+    '<strong>2025.1000.4052 更新内容：</strong>',
+        '1，修正采集TAG、拼音等问题。',
+        '2，修复缓冲提示广告不显示的问题。',
+        '3，修正图片下载失败更新时可重新下载。',
+        '4，后台Redis配置支持多DB以优化多站点模式。',
+        '5，后台视频列表可配置角色过滤。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
