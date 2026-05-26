@@ -12,15 +12,19 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2025.1000.4052';
+var new_v = '2026.1000.4053';
 var update_content = [
 
-    '<strong>2025.1000.4052 更新内容：</strong>',
-        '1，修正采集TAG、拼音等问题。',
-        '2，修复缓冲提示广告不显示的问题。',
-        '3，修正图片下载失败更新时可重新下载。',
-        '4，后台Redis配置支持多DB以优化多站点模式。',
-        '5，后台视频列表可配置角色过滤。',
+    '<strong>2026.1000.4053 更新内容：</strong>',
+        '1，AI 套件：编辑器代理、AI SEO、管理员助手、内容助手插件。',
+        '2，资源站中心一键采集、批量播放器/数据替换。',
+        '3，全新前端模板与主题可视化配置。',
+        '4，搜索升级：Meilisearch + AI 聊天 + 繁简同搜。',
+        '5，会员体系：任务签到、邀请奖励、提现申请。',
+        '6，影片聊天室与弹幕、内容回收站、批量导入导出。',
+        '7，运营数据统计：PV/UV、会话、留存、内容效果。',
+        '8，安全增强：SHA1 升级包校验、CSRF/CSP/审计/防爬中间件。',
+        '9，Jeepay 支付、S3/MinIO 兼容、Banner/启动图 API，及多项 Bug 修复。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
