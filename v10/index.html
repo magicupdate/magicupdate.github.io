@@ -12,20 +12,20 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2026.1000.4054';
+var new_v = '2026.1000.4055';
 var update_content = [
 
-    '<strong>2026.1000.4054 更新内容：</strong>',
-        '1，新增优惠券、限时秒杀与积分商城。',
-        '2，新增站内通知中心与站点监控告警中心。',
-        '3，新增直播模块、视频定时发布与多级审核。',
-        '4，新增后台API文档与异地备份（S3/OSS/MinIO）。',
-        '5，新增静态页生成、继续观看记忆及播放器倍速画质切换、失败自动换线。',
-        '6，弹幕聊天室升级实时化，新增AI云模板市场与AI封面生成。',
-        '7，优化Meilisearch搜索，修复升级流程并瘦身升级包。',
-        '8，全面加强安全：密码bcrypt、CSRF防护、TLS校验、Redis限流等。',
-        '9，修复账户接管、越权与XSS等安全漏洞。',
-        '10，重构后台界面并优化前台模板，其他细节优化。',
+    '<strong>2026.1000.4055 更新内容：</strong>',
+        '1，新增插件市场与在线安装：RS256签名验签、SSRF出站防护、ZipSlip双重校验及多语言i18n。',
+        '2，新增社交功能：关注/粉丝、动态流、内容分享与私信，并配套社交模板。',
+        '3，新增PWA与Web Push推送：订阅SSRF白名单、CSRF与限流配额、异步广播队列及站内消息中心。',
+        '4，新增用户优惠券、限时秒杀与积分金币商城前端对接。',
+        '5，新增AI内容标注、智能推荐、用户画像与内容质量评分运营统计管线。',
+        '6，AI聊天接通站内语义搜索，优化embedding语义重排。',
+        '7，增强播放失败自动换线（脚本兜底与外链探测），优化资源站loading画面。',
+        '8，加固付费下载：逐集锁定与集内地址泄露收口、已购判断与额度扣减修复、补全CSRF防护。',
+        '9，修复私信跨会话泄露、无券充值建单失败、采集绑定分类点击无反应及后台统计等问题。',
+        '10，移除旧版后台，其他细节优化。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
