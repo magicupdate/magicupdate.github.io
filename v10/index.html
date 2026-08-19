@@ -12,20 +12,22 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2026.1000.4055';
+var new_v = '2026.1000.4056';
 var update_content = [
 
-    '<strong>2026.1000.4055 更新内容：</strong>',
-        '1，新增插件市场与在线安装：RS256签名验签、SSRF出站防护、ZipSlip双重校验及多语言i18n。',
-        '2，新增社交功能：关注/粉丝、动态流、内容分享与私信，并配套社交模板。',
-        '3，新增PWA与Web Push推送：订阅SSRF白名单、CSRF与限流配额、异步广播队列及站内消息中心。',
-        '4，新增用户优惠券、限时秒杀与积分金币商城前端对接。',
-        '5，新增AI内容标注、智能推荐、用户画像与内容质量评分运营统计管线。',
-        '6，AI聊天接通站内语义搜索，优化embedding语义重排。',
-        '7，增强播放失败自动换线（脚本兜底与外链探测），优化资源站loading画面。',
-        '8，加固付费下载：逐集锁定与集内地址泄露收口、已购判断与额度扣减修复、补全CSRF防护。',
-        '9，修复私信跨会话泄露、无券充值建单失败、采集绑定分类点击无反应及后台统计等问题。',
-        '10，移除旧版后台，其他细节优化。',
+    '<strong>2026.1000.4056 更新内容：</strong>',
+        '1，修复小说漫画观看记录继续按钮与已读章节统计。',
+        '2，移除后台僵尸配置页面后缀名（app.suffix）。',
+        '3，模板 Ajax 错误提示与 base_url 归一化，收藏列表内容 ID 展示，修复播放记录进度条布局。',
+        '4，用户访问日志增加 IP/User-Agent 风控关联封禁。',
+        '5，新增配置文件分类说明文档并完善部分文件注释。',
+        '6，修复 AI SEO 前台接入、配置默认展示与多语言翻译缺失。',
+        '7，漫画编辑页补齐 AI SEO 生成与前台详情 meta 注入。',
+        '8，漫画/文章批量操作补齐分类选择入口并加固四模块分类写入校验。',
+        '9，后台首页访问统计改用埋点聚合表并补充定时任务。',
+        '10，站群多域名支持独立手机模板与手机站域名。',
+        '11，修复 default 模板前端 UI（封面比例/直播/排行榜/播放全屏）。',
+        '12，修复 PHP 7 类常量可见性兼容问题。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
