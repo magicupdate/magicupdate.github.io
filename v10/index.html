@@ -12,22 +12,22 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2026.1000.4056';
+var new_v = '2026.1000.4057';
 var update_content = [
-
-    '<strong>2026.1000.4056 更新内容：</strong>',
-        '1，修复小说漫画观看记录继续按钮与已读章节统计。',
-        '2，移除后台僵尸配置页面后缀名（app.suffix）。',
-        '3，模板 Ajax 错误提示与 base_url 归一化，收藏列表内容 ID 展示，修复播放记录进度条布局。',
-        '4，用户访问日志增加 IP/User-Agent 风控关联封禁。',
-        '5，新增配置文件分类说明文档并完善部分文件注释。',
-        '6，修复 AI SEO 前台接入、配置默认展示与多语言翻译缺失。',
-        '7，漫画编辑页补齐 AI SEO 生成与前台详情 meta 注入。',
-        '8，漫画/文章批量操作补齐分类选择入口并加固四模块分类写入校验。',
-        '9，后台首页访问统计改用埋点聚合表并补充定时任务。',
-        '10，站群多域名支持独立手机模板与手机站域名。',
-        '11，修复 default 模板前端 UI（封面比例/直播/排行榜/播放全屏）。',
-        '12，修复 PHP 7 类常量可见性兼容问题。',
+    '<strong>2026.1000.4057 更新内容：</strong>',
+    '修复后台删除功能路径穿越导致的任意文件删除漏洞。',
+    '公开用户 API 不再返回手机号等隐私字段。',
+    '修复采集简介存储型 XSS，并加固邀请关系信任链与密码校验。',
+    '新增内容级多语言，支持视频/文章等按语言存储翻译字段。',
+    '新增 AI 短视频（MPT）插件，并支持素材拼接顺序设置。',
+    '新增自营站主题设计器、资源健康检测与访问密码门。',
+    '修正播放器自动全屏保存假成功，并支持真正触发网页全屏。',
+    '修复 AI 搜索登录闸误判未登录。',
+    '用户中心支持删除头像并恢复默认。',
+    '修复收藏成功后未回填 ulog_id 导致取消收藏仅改 UI。',
+    '视频详情页补齐取消收藏按钮，并优化 H5 按钮换行。',
+    '移动端 DPlayer 播放钮移至左下，避开控制栏遮挡。',
+    '优化后台表单保存失败时的令牌刷新与必填项标红提示。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
