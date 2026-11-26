@@ -12,17 +12,10 @@ if (r!=null) return unescape(r[2]); return null;
 function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
 function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
 
-var new_v = '2026.1000.4058';
+var new_v = '2026.1000.4059';
 var update_content = [
-    '<strong>2026.1000.4058 更新内容：</strong>',
-    '修复后台定时任务保存时写回覆盖已有任务。',
-    '修复后台上传扩展设置保存后丢失。',
-    '修复评论模板标签 num 和 rid 失效。',
-    '播放预加载和缓冲默认改为站内提示页。',
-    '网址列表和演员列表按名称排序改为参数绑定，名称不再拼进 SQL。',
-    '提现审核、提现删除、会员删除和会员状态开关只接受带令牌的 POST。',
-    '采集请求改为逐跳公网校验，已授权的私网源需先在服务器环境变量登记。',
-    '后台在线保存模板限制为展示语法，阻止写入可执行代码。',
+    '<strong>2026.1000.4059 更新内容：</strong>',
+    '修复调度采集结束后浏览器跳到不存在的定时任务地址。',
 ].join('<br>');
 var package = 'maccms10_update';
 var domain = 'update.maccms.la/';
